@@ -31,12 +31,12 @@
     <namespace>http://xml.apache.org/axis/wsdd/</namespace>
   </service>
 
-  <service name="userServiceImpl" provider="java:RPC">
-    <parameter name="allowedMethods" value="*"/>
-    <parameter name="scope" value="Application"/>
-    <parameter name="className" value="com.lingnan.service.impl.UserServiceImpl"/>
-    <beanMapping languageSpecificType="java:com.lingnan.bean.User" qname="ns:user" xmlns:ns="urn:UserManager"/>
-  </service>
+  <!--<service name="userServiceImpl" provider="java:RPC">-->
+    <!--<parameter name="allowedMethods" value="*"/>-->
+    <!--<parameter name="scope" value="Application"/>-->
+    <!--<parameter name="className" value="com.lingnan.service.impl.UserServiceImpl"/>-->
+    <!--<beanMapping languageSpecificType="java:com.lingnan.bean.User" qname="ns:user" xmlns:ns="urn:UserManager"/>-->
+  <!--</service>-->
 
   <service name="Version" provider="java:RPC">
     <parameter name="allowedMethods" value="getVersion"/>

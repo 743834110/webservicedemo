@@ -12,6 +12,7 @@
         <param-value>
             classpath:spring/app-context.xml
             classpath:spring/app-dataSource.xml
+            classpath:spring/app-webService.xml
         </param-value>
     </context-param>
 
@@ -35,62 +36,73 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--cxf 配置-->
     <servlet>
-        <servlet-name>AxisServlet</servlet-name>
-        <display-name>Apache-Axis Servlet</display-name>
-        <servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AdminServlet</servlet-name>
-        <display-name>Axis Admin Servlet</display-name>
-        <servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
-        <load-on-startup>100</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>SOAPMonitorService</servlet-name>
-        <display-name>SOAPMonitorService</display-name>
-        <servlet-class>org.apache.axis.monitor.SOAPMonitorService</servlet-class>
-        <init-param>
-            <param-name>SOAPMonitorPort</param-name>
-            <param-value>5101</param-value>
-        </init-param>
-        <load-on-startup>100</load-on-startup>
+        <servlet-name>CXFServlet</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AxisServlet</servlet-name>
-        <url-pattern>/servlet/AxisServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AxisServlet</servlet-name>
-        <url-pattern>*.jws</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AxisServlet</servlet-name>
+        <servlet-name>CXFServlet</servlet-name>
         <url-pattern>/services/*</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SOAPMonitorService</servlet-name>
-        <url-pattern>/SOAPMonitor</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AdminServlet</servlet-name>
-        <url-pattern>/servlet/AdminServlet</url-pattern>
-    </servlet-mapping>
-    <mime-mapping>
-        <extension>wsdl</extension>
-        <mime-type>text/xml</mime-type>
-    </mime-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--apacha Axis 配置-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>AxisServlet</servlet-name>-->
+        <!--<display-name>Apache-Axis Servlet</display-name>-->
+        <!--<servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>AdminServlet</servlet-name>-->
+        <!--<display-name>Axis Admin Servlet</display-name>-->
+        <!--<servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>-->
+        <!--<load-on-startup>100</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>SOAPMonitorService</servlet-name>-->
+        <!--<display-name>SOAPMonitorService</display-name>-->
+        <!--<servlet-class>org.apache.axis.monitor.SOAPMonitorService</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-name>SOAPMonitorPort</param-name>-->
+            <!--<param-value>5101</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>100</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>AxisServlet</servlet-name>-->
+        <!--<url-pattern>/servlet/AxisServlet</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>AxisServlet</servlet-name>-->
+        <!--<url-pattern>*.jws</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>AxisServlet</servlet-name>-->
+        <!--<url-pattern>/services/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>SOAPMonitorService</servlet-name>-->
+        <!--<url-pattern>/SOAPMonitor</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>AdminServlet</servlet-name>-->
+        <!--<url-pattern>/servlet/AdminServlet</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<mime-mapping>-->
+        <!--<extension>wsdl</extension>-->
+        <!--<mime-type>text/xml</mime-type>-->
+    <!--</mime-mapping>-->
     
 </web-app>

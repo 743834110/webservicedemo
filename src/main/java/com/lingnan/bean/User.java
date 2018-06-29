@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by Administrator on 2018/6/28.
  */
-public class User implements Serializable{
+public class User{
 
 
     private String userName;
